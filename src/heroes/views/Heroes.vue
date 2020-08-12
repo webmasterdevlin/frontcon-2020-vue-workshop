@@ -3,7 +3,7 @@
     <h1>Heroes Works!</h1>
     <div style="display: flex; place-content: center; place-items: center;">
       <div class="mb-5">
-        <Form />
+        <Form text="Create" :obj="heroForm" @handleSubmit="alert" />
       </div>
     </div>
     <div
@@ -58,6 +58,16 @@ export default {
   setup() {
     return {};
   },
+
+  data: () => ({
+    heroForm: {
+      firstName: "",
+      lastName: "",
+      house: "",
+      knownAs: "",
+    },
+  }),
+
   computed: {
     ...mapGetters("hero", {
       heroes: "heroes",
@@ -66,6 +76,9 @@ export default {
   },
   methods: {
     ...mapActions("hero", ["getHeroesAction", "removeHeroAction"]),
+    alert() {
+      alert("HEY ALERT ME");
+    },
   },
   mounted() {
     this.getHeroesAction();
