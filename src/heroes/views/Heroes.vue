@@ -29,7 +29,7 @@
           <section class="card-body">
             <div class="row">
               <button
-                @click="alert(hero.id)"
+                @click="removeHeroAction(hero.id)"
                 class="btn btn-outline-danger card-link col text-center"
               >
                 Delete
@@ -58,11 +58,7 @@ export default {
     }),
   },
   methods: {
-    ...mapActions("hero", ["getHeroesAction"]),
-
-    alert(id) {
-      alert(id);
-    },
+    ...mapActions("hero", ["getHeroesAction", "removeHeroAction"]),
   },
   mounted() {
     this.getHeroesAction();
