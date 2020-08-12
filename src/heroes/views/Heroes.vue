@@ -24,6 +24,7 @@ export default {
   setup() {
     return {};
   },
+  
   computed: {
     ...mapGetters("hero", {
       heroes: "heroes",
