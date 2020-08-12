@@ -6,3 +6,6 @@ const getters = {
 };
 
 export default getters;
+
+
+// state.heroes = state.heroes.filter((h) => h.id !== id);
