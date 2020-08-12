@@ -1,5 +1,5 @@
 import * as types from "./types";
-import { get } from "../../shared/api-call";
+import { get, deleteById } from "../../shared/api-call";
 
 export function getHeroesAction({ commit }) {
   commit(types.ISLOADING_HERO, true);
