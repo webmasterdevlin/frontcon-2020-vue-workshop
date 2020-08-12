@@ -3,7 +3,11 @@
     <h1>Heroes Works!</h1>
     <div style="display: flex; place-content: center; place-items: center;">
       <div class="mb-5">
-        <Form text="Create" :obj="heroForm" @handleSubmit="alert" />
+        <Form
+          :text="'Save New Hero'"
+          :obj="heroForm"
+          @handleSubmit="onSubmitHero"
+        />
       </div>
     </div>
     <div
@@ -49,18 +53,16 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+
 import Form from "../../shared/components/Form";
 
 export default {
   name: "Heroes",
   components: { Form },
 
-  setup() {
-    return {};
-  },
-
   data: () => ({
     heroForm: {
+      id: "",
       firstName: "",
       lastName: "",
       house: "",
@@ -68,18 +70,29 @@ export default {
     },
   }),
 
+  setup() {
+    return {};
+  },
+
   computed: {
     ...mapGetters("hero", {
       heroes: "heroes",
       isLoading: "isLoading",
     }),
   },
+
   methods: {
-    ...mapActions("hero", ["getHeroesAction", "removeHeroAction"]),
-    alert() {
-      alert(JSON.stringify(this.heroForm, null, 2));
+    ...mapActions("hero", [
+      "getHeroesAction",
+      "removeHeroAction",
+      "addHeroAction",
+    ]),
+    onSubmitHero() {
+      this.addHeroAction(this.heroForm);
+      this.heroForm = {};
     },
   },
+
   mounted() {
     this.getHeroesAction();
   },
