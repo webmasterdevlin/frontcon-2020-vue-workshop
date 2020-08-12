@@ -2,12 +2,17 @@
   <div class="container-fluid">
     <h1>Heroes Works!</h1>
     <section>
-      <div>
-        <div class="card mt-3" style="width: auto;">
+      <div v-if="heroes.length > 0">
+        <div
+          class="card mt-3"
+          style="width: auto;"
+          v-for="hero in heroes"
+          :key="hero.id"
+        >
           <div class="card-header">
-            <h3 class="card-title">hero.firstName hero.lastName</h3>
-            <h5 class="card-subtitle mb-2 text-muted">hero.house</h5>
-            <p class="card-text">hero.knownAs</p>
+            <h3 class="card-title">{{ hero.firstName }} {{ hero.lastName }}</h3>
+            <h5 class="card-subtitle mb-2 text-muted">{{ hero.house }}</h5>
+            <p class="card-text">{{ hero.knownAs }}</p>
           </div>
         </div>
       </div>
@@ -16,13 +21,20 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Heroes",
 
   setup() {
     return {};
+  },
+
+  computed: {
+    ...mapGetters("hero", {
+      heroes: "heroes",
+      isLoading: "isLoading",
+    }),
   },
 
   methods: {
