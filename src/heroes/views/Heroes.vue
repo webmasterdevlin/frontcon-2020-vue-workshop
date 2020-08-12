@@ -77,7 +77,7 @@ export default {
   methods: {
     ...mapActions("hero", ["getHeroesAction", "removeHeroAction"]),
     alert() {
-      alert("HEY ALERT ME");
+      alert(JSON.stringify(this.heroForm, null, 2));
     },
   },
   mounted() {

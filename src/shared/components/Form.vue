@@ -68,10 +68,11 @@ export default {
       type: Object,
       default: () => {},
     },
-    methods: {
-      onSubmit() {
-        this.$emit("handleSubmit");
-      },
+  },
+
+  methods: {
+    onSubmit() {
+      this.$emit("handleSubmit");
     },
   },
 };
