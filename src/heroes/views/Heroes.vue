@@ -16,11 +16,21 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Heroes",
 
   setup() {
     return {};
+  },
+
+  methods: {
+    ...mapActions("hero", ["getHeroesAction"]),
+  },
+
+  mounted() {
+    this.getHeroesAction();
   },
 };
 </script>
