@@ -9,7 +9,8 @@
   "dependencies": {
     "bootstrap": "^5.0.0-alpha1",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0-rc.5"
+    "vue": "^3.0.0-rc.5",
+    "vue-router": "^4.0.0-beta.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.3",
