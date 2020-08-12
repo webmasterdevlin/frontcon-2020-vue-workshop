@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "backend": "json-server --watch db.json --port 5000 --delay=1000",
+    "backend": "json-server --watch db.json --port 5000 --delay=1000  -m ./node_modules/json-server-auth",
     "start:dev": "concurrently \"npm run backend\" \"npm run serve\""
   },
   "dependencies": {

@@ -18,3 +18,7 @@ export async function post(path, obj) {
 export async function put(path, obj) {
   return await api.put(`${path}/${obj.id}`, obj);
 }
+
+export async function registerUser(register) {
+  return await api.post("register", register);
+}
