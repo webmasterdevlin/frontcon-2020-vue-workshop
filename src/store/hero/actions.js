@@ -9,3 +9,14 @@ export function getHeroesAction({ commit }) {
     .catch((e) => console.log(e.message))
     .finally(() => commit(types.ISLOADING_HERO, false));
 }
+
+export function removeHeroAction({ commit }, payload) {
+  commit(types.ISLOADING_HERO, true);
+
+  return deleteById("heroes", payload)
+    .then(() => commit(types.REMOVE_HERO, payload))
+    .catch((e) => {
+      console.log(e.message);
+    })
+    .finally(() => commit(types.ISLOADING_HERO, false));
+}
