@@ -14,3 +14,7 @@ export async function deleteById(path, id) {
 export async function post(path, obj) {
   return await api.post(path, obj);
 }
+
+export async function put(path, obj) {
+  return await api.put(`${path}/${obj.id}`, obj);
+}

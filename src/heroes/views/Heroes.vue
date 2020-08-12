@@ -110,14 +110,14 @@ export default {
   },
 
   computed: {
-    ...mapGetters("heroModule", {
+    ...mapGetters("hero", {
       heroes: "heroes",
       isLoading: "isLoading",
     }),
   },
 
   methods: {
-    ...mapActions("heroModule", [
+    ...mapActions("hero", [
       "getHeroesAction",
       "removeHeroAction",
       "addHeroAction",

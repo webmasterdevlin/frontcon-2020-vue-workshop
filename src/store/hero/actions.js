@@ -27,3 +27,12 @@ export function addHeroAction({ commit }, payload) {
     .catch((e) => console.log(e.message))
     .finally(() => commit(types.ISLOADING_HERO, false));
 }
+
+export function updateHeroAction({ commit }, payload) {
+  commit(types.ISLOADING_HERO, true);
+
+  return put("heroes", payload)
+    .then(() => commit(types.UPDATE_HERO, payload))
+    .catch((e) => console.log(e.message))
+    .finally(() => commit(types.ISLOADING_HERO, false));
+}
