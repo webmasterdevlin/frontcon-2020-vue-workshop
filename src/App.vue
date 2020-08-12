@@ -1,5 +1,7 @@
 <template>
   <div>
+    <input v-model="message" />
+    <button @click="clearMessage">Clear</button>
     <h3>{{message}}</h3>
   </div>
 </template>
@@ -11,6 +13,11 @@ export default {
   data: () => ({
     message: "Vuejs Workshop",
   }),
+  methods: {
+    clearMessage() {
+      this.message = "";
+    },
+  },
 };
 </script>
 
