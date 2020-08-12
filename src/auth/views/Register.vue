@@ -32,8 +32,7 @@
       </button>
 
       <p class="forgot-password text-right">
-        Already registered
-        <router-link :to="{ name: 'login' }">sign in?</router-link>
+        Already registered sign in?
       </p>
     </form>
   </div>

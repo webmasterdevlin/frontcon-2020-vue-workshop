@@ -18,5 +18,14 @@ export const router = createRouter({
       name: "heroes",
       component: Heroes,
     },
+    {
+      path: "/register",
+      name: "register",
+      meta: {
+        title: "Register",
+        requiresAuth: false,
+      },
+      component: () => import("../auth/views/Register"),
+    },
   ],
 });
