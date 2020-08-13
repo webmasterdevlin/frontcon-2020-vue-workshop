@@ -2,7 +2,7 @@ import * as types from "./types";
 
 const mutations = {
   [types.GET_HEROES](state, heroes) {
-    console.log("GET_HEROES");
+    console.log("mutation.js_[types.GET_HEROES]");
     state.heroes = heroes;
   },
 

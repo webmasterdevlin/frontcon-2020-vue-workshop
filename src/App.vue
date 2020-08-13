@@ -1,9 +1,11 @@
-<template>
+<template #default>
   <div>
     <HeaderNav></HeaderNav>
     <div class="container">
-      <div class="my-5">
-        <router-view></router-view>
+      <div class="vertical-center">
+        <div >
+          <router-view></router-view>
+        </div>
       </div>
     </div>
   </div>
@@ -11,10 +13,8 @@
 
 <script>
 import HeaderNav from "./shared/components/Navbar";
-
 export default {
   name: "App",
-
   components: {
     HeaderNav,
   },
@@ -23,4 +23,13 @@ export default {
 
 <style>
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
+/* @import "../node_modules/bootstrap-icons"; */
+
+
+h1, h2, h3 {
+  margin-bottom: 2rem;
+}
+input {
+  margin-bottom: 2rem;
+}
 </style>

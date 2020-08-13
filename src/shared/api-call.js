@@ -4,6 +4,7 @@ const baseURL = "http://localhost:5000/";
 const api = axios.create({ baseURL });
 
 export async function get(path) {
+  console.log("api-call.js_get()");
   return await api.get(path);
 }
 
@@ -19,6 +20,11 @@ export async function put(path, obj) {
   return await api.put(`${path}/${obj.id}`, obj);
 }
 
-export async function registerUser(register) {
+export async function loginUserAxios(login) {
+  return await api.post("login", login);
+}
+
+export async function registerUserAxios(register) {
+  console.log("REGISTER::", register);
   return await api.post("register", register);
 }

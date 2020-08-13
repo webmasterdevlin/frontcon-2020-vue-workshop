@@ -5,8 +5,8 @@ import * as actions from "./actions";
 
 export default {
   namespaced: true,
-  getters: getters,
-  mutations: mutations,
-  actions: actions,
-  state: state,
+  getters,
+  mutations,
+  actions,
+  state,
 };

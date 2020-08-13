@@ -1,8 +1,25 @@
 import * as types from "./types";
-import { registerUser } from "../../shared/api-call";
+import { loginUserAxios, registerUserAxios } from "../../shared/api-call";
+import { getAccessToken, isTokenFromLocalStorageValid } from '../../auth/auth.service'
+
+export function loginUserAction({ commit }, payload) {
+
+  return loginUserAxios(payload).then(({ data }) =>
+     commit(types.LOGIN_USER, data.accessToken)
+  );
+}
 
 export function registerUserAction({ commit }, payload) {
-  return registerUser(payload).then(({ data }) =>
+
+  return registerUserAxios(payload).then(({ data }) =>
     commit(types.REGISTER_USER, data.accessToken)
   );
+}
+
+export function useLocalStorageTokenToSignIn({commit}) {
+    if (!isTokenFromLocalStorageValid()) return;
+
+    const token = getAccessToken();
+
+    commit(types.LOCAL_STORAGE_TOKEN_LOG_IN, token)
 }

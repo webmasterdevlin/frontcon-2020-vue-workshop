@@ -6,9 +6,14 @@
       "id": "9gIzkXe"
     },
     {
+      "email": "student.devlin@gmail.com",
+      "password": "$2a$10$OG2sLECRs.KWGXha1eV71eqirveIKtS9jTDSa9Dui8JSRnAuQTECW",
+      "id": "A7G2TZD"
+    },
+    {
       "email": "devlin@gmail.com",
-      "password": "$2a$10$LTYAIZ1YLQ/Tori6cCZVd.8vYyf4Zv0WMepzkf3AP4UhkMbzPHxQ6",
-      "id": "b7E_4KD"
+      "password": "$2a$10$GQdarzltogxlWO2IGSVEyutwvxG.CdzYzjWp33fYtrRkolB1w2GKK",
+      "id": "3jYb42q"
     }
   ],
   "heroes": [
@@ -72,7 +77,7 @@
       "firstName": "Devlin",
       "lastName": "Duldulao",
       "house": "inmeta",
-      "knownAs": "Ninja",
+      "knownAs": "Ninja Wah",
       "id": "xHFU7Tq"
     }
   ]

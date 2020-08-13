@@ -6,5 +6,4 @@ const getters = {
     return state.signInState.accessToken;
   },
 };
-
 export default getters;

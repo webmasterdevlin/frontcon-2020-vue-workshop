@@ -2,6 +2,7 @@ import * as types from "./types";
 import { get, deleteById, post, put } from "../../shared/api-call";
 
 export function getHeroesAction({ commit }) {
+  console.log("actions.js_getHeroesAction()");
   commit(types.ISLOADING_HERO, true);
 
   return get("heroes")

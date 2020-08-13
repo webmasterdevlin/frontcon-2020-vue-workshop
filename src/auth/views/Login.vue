@@ -1,12 +1,12 @@
 <template>
   <div>
     <form @submit.prevent="onSubmit">
-      <h3>Register</h3>
+      <h3>Login</h3>
 
       <section class="form-group">
         <label for="email">Email address</label>
         <input
-          v-model="registerForm.email"
+          v-model="loginForm.email"
           placeholder="📧"
           autocomplete="off"
           id="email"
@@ -18,7 +18,7 @@
       <section class="form-group">
         <label for="password">Password</label>
         <input
-          v-model="registerForm.password"
+          v-model="loginForm.password"
           placeholder="🔑"
           autocomplete="off"
           id="password"
@@ -27,11 +27,10 @@
         />
       </section>
 
-      <button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
+      <button type="submit" class="btn btn-dark btn-lg btn-block">Login</button>
 
-      <p class="forgot-password text-right">
-        Already registered
-        <router-link :to="{ name: 'login' }">sign in?</router-link>
+      <p class="forgot-password text-right mt-2 mb-4">
+        <router-link to="/forgot-password">Forgot password ?</router-link>
       </p>
     </form>
   </div>
@@ -41,20 +40,19 @@
 import { mapActions } from "vuex";
 
 export default {
-  name: "Register",
+  name: "Login",
 
   data: () => ({
-    registerForm: {
+    loginForm: {
       email: "",
       password: "",
     },
   }),
 
   methods: {
-    ...mapActions("authModule", ["registerUserAction"]),
-
+    ...mapActions("authModule", ["loginUserAction"]),
     onSubmit() {
-      this.registerUserAction(this.registerForm).then(() => {
+      this.loginUserAction(this.loginForm).then(() => {
         this.$router.push({ name: "heroes" });
       });
     },
